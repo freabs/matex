@@ -1,0 +1,107 @@
+
+% ----- General packages
+
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+
+% ----- Document spec
+
+\usepackage[left=2.4cm,right=2.4cm,top=3cm,bottom=3cm]{geometry}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0em}
+
+
+% ----- Theorem Boxes 
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[theorems]{tcolorbox}
+
+\newtcbtheorem[number within=subsection]{theorem}{Teorema} {
+    coltitle=OliveGreen,
+    colback=ForestGreen!5,
+    colframe=ForestGreen,
+    boxrule=0pt,
+    leftrule=2pt,
+    attach title to upper,
+    sharp corners,
+    left=2mm,
+    fonttitle=\bfseries\sffamily,
+    description font=\mdseries,
+    description delimiters parenthesis,
+    before upper={\tcbtitle \vspace{0.15cm} \\ }
+}{}
+
+\newtcbtheorem[number within=subsection]{lemma}{Lemma} {
+    coltitle=RoyalBlue,
+    colback=RoyalBlue!5,
+    colframe=RoyalBlue,
+    boxrule=0pt,
+    leftrule=2pt,
+    attach title to upper,
+    sharp corners,
+    left=2mm,
+    fonttitle=\bfseries\sffamily,
+    description font=\mdseries,
+    description delimiters parenthesis,
+    before upper={\tcbtitle \vspace{0.15cm} \\ }
+}{}
+
+\newtcbtheorem[number within=subsection]{proposition}{Proposizione} {
+    coltitle=RoyalBlue,
+    colback=RoyalBlue!5,
+    colframe=RoyalBlue,
+    boxrule=0pt,
+    leftrule=2pt,
+    attach title to upper,
+    sharp corners,
+    left=2mm,
+    fonttitle=\bfseries\sffamily,
+    description font=\mdseries,
+    description delimiters parenthesis,
+    before upper={\tcbtitle \vspace{0.15cm} \\ }
+}{}
+
+\newtcbtheorem[number within=subsection]{example}{Esempio} {
+    coltitle=RawSienna,
+    colback=RawSienna!5,
+    colframe=RawSienna,
+    boxrule=0pt,
+    leftrule=2pt,
+    attach title to upper,
+    sharp corners,
+    left=2mm,
+    fonttitle=\bfseries\sffamily,
+    description font=\mdseries,
+    description delimiters parenthesis,
+    before upper={\tcbtitle \vspace{0.15cm} \\ }
+}{}
+
+\newtcbtheorem{claim}{Claim --- } {
+    coltitle=Black,
+    colback=Black!5,
+    colframe=Black,
+    detach title,
+    boxrule=0pt,
+    leftrule=2pt,
+    attach title to upper,
+    sharp corners,
+    left=2mm,
+    fonttitle=\bfseries\sffamily,
+}{}
+
+
+% ----- Sectioning
+
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+
+\titleformat{\section}
+   {\sffamily\Large\bfseries}
+   {\color{Maroon}§\thesection}{5pt}{}
+
+\titleformat{\subsection}
+   {\sffamily\large\bfseries}
+   {\color{Maroon}§\thesubsection}{5pt}{}
+
