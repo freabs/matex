@@ -2,9 +2,10 @@
 % ----- General packages
 
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{fancyhdr}
-\usepackage{enumitem}
+\usepackage{enumitem} 
 
 
 % ----- Document spec
@@ -14,85 +15,124 @@
 \setlength{\parskip}{0em}
 
 
+% ----- Hyperlinks
+
+\usepackage{hyperref}
+\usepackage[nameinlink]{cleveref}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={RoyalBlue},
+    citecolor={ForestGreen},
+	 urlcolor={RubineRed}
+}
+
 % ----- Theorem Boxes 
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage[theorems]{tcolorbox}
 
 \newtcbtheorem[number within=subsection]{theorem}{Teorema} {
-    coltitle=OliveGreen,
-    colback=ForestGreen!5,
-    colframe=ForestGreen,
-    boxrule=0pt,
-    leftrule=2pt,
-    attach title to upper,
-    sharp corners,
-    left=2mm,
-    fonttitle=\bfseries\sffamily,
-    description font=\mdseries,
-    description delimiters parenthesis,
-    before upper={\tcbtitle \vspace{0.15cm} \\ }
-}{}
+	before skip=0.5cm,
+	coltitle=OliveGreen,
+	colback=ForestGreen!5,
+	colframe=ForestGreen,
+	boxrule=0pt,
+	leftrule=2pt,
+	attach title to upper,
+	sharp corners,
+	left=2mm,
+	fonttitle=\bfseries\sffamily,
+	description font=\mdseries,
+	description delimiters parenthesis,
+	before upper={\tcbtitle \vspace{0.15cm} \\ }
+}{theorem}
+
+\newtcbtheorem[number within=subsection]{intheorem}{Teorema} {
+	before skip=0.5cm,
+	coltitle=OliveGreen,
+	colback=ForestGreen!5,
+	colframe=ForestGreen,
+	boxrule=0pt,
+	leftrule=2pt,
+	attach title to upper,
+	sharp corners,
+	left=2mm,
+	fonttitle=\bfseries\sffamily,
+	description font=\mdseries,
+	description delimiters parenthesis,
+	before upper={\tcbtitle \hspace{0.25cm}}
+}{intheorem}
+
+
 
 \newtcbtheorem[number within=subsection]{lemma}{Lemma} {
-    coltitle=RoyalBlue,
-    colback=RoyalBlue!5,
-    colframe=RoyalBlue,
-    boxrule=0pt,
-    leftrule=2pt,
-    attach title to upper,
-    sharp corners,
-    left=2mm,
-    fonttitle=\bfseries\sffamily,
-    description font=\mdseries,
-    description delimiters parenthesis,
-    before upper={\tcbtitle \vspace{0.15cm} \\ }
-}{}
+	before skip=0.5cm,
+	coltitle=RoyalBlue,
+	colback=RoyalBlue!5,
+	colframe=RoyalBlue,
+	boxrule=0pt,
+	leftrule=2pt,
+	attach title to upper,
+	sharp corners,
+	left=2mm,
+	fonttitle=\bfseries\sffamily,
+	description font=\mdseries,
+	description delimiters parenthesis,
+	before upper={\tcbtitle \vspace{0.15cm} \\ }
+}{lemma}
 
 \newtcbtheorem[number within=subsection]{proposition}{Proposizione} {
-    coltitle=RoyalBlue,
-    colback=RoyalBlue!5,
-    colframe=RoyalBlue,
-    boxrule=0pt,
-    leftrule=2pt,
-    attach title to upper,
-    sharp corners,
-    left=2mm,
-    fonttitle=\bfseries\sffamily,
-    description font=\mdseries,
-    description delimiters parenthesis,
-    before upper={\tcbtitle \vspace{0.15cm} \\ }
-}{}
+	before skip=0.5cm,
+	coltitle=RoyalBlue,
+	colback=RoyalBlue!5,
+	colframe=RoyalBlue,
+	boxrule=0pt,
+	leftrule=2pt,
+	attach title to upper,
+	sharp corners,
+	left=2mm,
+	fonttitle=\bfseries\sffamily,
+	description font=\mdseries,
+	description delimiters parenthesis,
+	before upper={\tcbtitle \vspace{0.15cm} \\ }
+}{proposition}
 
 \newtcbtheorem[number within=subsection]{example}{Esempio} {
-    coltitle=RawSienna,
-    colback=RawSienna!5,
-    colframe=RawSienna,
-    boxrule=0pt,
-    leftrule=2pt,
-    attach title to upper,
-    sharp corners,
-    left=2mm,
-    fonttitle=\bfseries\sffamily,
-    description font=\mdseries,
-    description delimiters parenthesis,
-    before upper={\tcbtitle \vspace{0.15cm} \\ }
-}{}
+	before skip=0.5cm,
+	coltitle=RawSienna,
+	colback=RawSienna!5,
+	colframe=RawSienna,
+	boxrule=0pt,
+	leftrule=2pt,
+	attach title to upper,
+	sharp corners,
+	left=2mm,
+	fonttitle=\bfseries\sffamily,
+	description font=\mdseries,
+	description delimiters parenthesis,
+	before upper={\tcbtitle \vspace{0.15cm} \\ }
+}{example}
 
 \newtcbtheorem{claim}{Claim --- } {
-    coltitle=Black,
-    colback=Black!5,
-    colframe=Black,
-    detach title,
-    boxrule=0pt,
-    leftrule=2pt,
-    attach title to upper,
-    sharp corners,
-    left=2mm,
-    fonttitle=\bfseries\sffamily,
-}{}
+	before skip=0.5cm,
+	after skip=0.5cm,
+	coltitle=Black,
+	colback=Black!5,
+	colframe=Black,
+	detach title,
+	boxrule=0pt,
+	leftrule=2pt,
+	attach title to upper,
+	sharp corners,
+	left=2mm,
+	fonttitle=\bfseries\sffamily,
+}{claim}
 
-\newtheorem{exercise}{Esercizio}
+\newtheorem{exercise}{Esercizio}[subsection]
+\newtheorem{definition}{Definizione}[subsection]
+
+\renewcommand*{\proofname}{Dimostrazione}
 
 % ----- Sectioning
 
@@ -100,10 +140,10 @@
 \usepackage{titlesec}
 
 \titleformat{\section}
-   {\sffamily\Large\bfseries}
-   {\color{Maroon}§\thesection}{5pt}{}
+{\sffamily\Large\bfseries}
+{\color{Maroon}§\thesection}{5pt}{}
 
 \titleformat{\subsection}
-   {\sffamily\large\bfseries}
-   {\color{Maroon}§\thesubsection}{5pt}{}
+{\sffamily\large\bfseries}
+{\color{Maroon}§\thesubsection}{5pt}{}
 

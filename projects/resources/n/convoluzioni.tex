@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{../../../style}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Teoria dei numeri}
+\fancyhead[C]{Dispende Olimat}
+\fancyhead[R]{\nouppercase{\leftmark}}
+
+\section{Funzioni moltiplicative}
+
+Ricordiamo che una funzione $f$ è detta $\emph{moltiplicativa}$
+se $f(mn)=f(m)f(n)$ per ogni coppia $(m,n)$ di interi coprimi.
+
+\begin{theorem}{}{mult_summation}
+	Sia $f$ una funzione moltiplicativa. La funzione		
+	$F(n):=\sum_{d \vert n}f(d)$ è anch'essa moltiplicativa.
+\end{theorem}
+\begin{proof}
+	Notiamo che un qualsiasi divisore di $mn$, dal momento che
+	$m$ ed $n$ sono coprimi,
+	può essere scritto come prodotto di un divisore di $m$ e un divisore di $n$.
+	Si ottiene dunque che
+	\begin{equation*}
+		F(nm)=\sum_{d\vert mn}d=\sum_{d\vert m}d\cdot \sum_{d\vert n}d=F(m)F(n),
+	\end{equation*}
+	da cui la tesi.
+\end{proof}
+
+Applicando il teorema $\ref{theorem:mult_summation}$ alle funzioni moltiplicative
+$\textbf{1}(d):=1$ e $\text{Id}(d):=d$, si dimostra senza ulteriori sforzi che
+le funzioni $d(n)=\sum_{d\vert n}\textbf{1}(d)$
+e $\sigma(n)=\sum_{d\vert n}\text{Id}(d)$, di uso comune nella teoria dei numeri,
+sono moltiplicative.
+Definiamo ora alcune funzioni che saranno d'aiuto in seguito.
+
+\begin{definition}
+La funzione di Möbius $\mu(n)$ è definita come segue:
+\begin{equation*}
+	\mu(n):=
+	\begin{cases}
+		1 & \text{se $n=1$,} \\
+		(-1)^m & \text{se $n$ non ha divisori quadrati e ha $m$ divisori,} \\
+		0 & \text{se $n$ ha almeno un divisore quadrato.}
+	\end{cases}
+\end{equation*}
+\end{definition}
+
+\begin{definition}
+La funzione di Dirichlet $\delta(n)$ è definita come segue:
+\begin{equation*}
+	\delta(n):=
+	\begin{cases}
+		1 & \text{se $n=1$,} \\
+		0 & \text{se $n\ne 1$.}
+	\end{cases}
+\end{equation*}
+\end{definition}
+
+\begin{intheorem}{}{mobmu}
+	Per ogni numero naturale $n$, vale la relazione $\sum_{d\vert n}\mu(d)=\delta(n)$.
+\end{intheorem}
+
+La dimostrazione è lasciata come esercizio.
+
+
+\subsection{Convolutione di Dirichlet}
+Nell'ambito della teoria dei numeri, la sommatoria $\sum_{d\vert n}$
+ricorre in svariate circostanze. La convoluzione è uno strumento
+che permette di inquadrare in un contesto formale le varie ricorrenze
+particolari, per poterle quindi affrontare con un arsenale teorico
+non indifferente.
+
+\begin{definition}
+Siano $f$ e $g$ due funzioni aritmetiche, non necessariamente moltiplicative.
+La convoluzione di Dirichelet $f\ast g$ delle due funzioni è definita come segue:
+\begin{equation*}
+	f\ast g:=\sum_{d\vert n}f(d)g\left(\frac{n}{d}\right).
+\end{equation*}
+\end{definition}
+
+Per fare qualche esempio, possiamo quindi affermare che
+$d=\textbf{1}\ast\textbf{1}$, $\sigma=\text{Id}\ast\textbf{1}$,
+$\delta=\mu\ast\textbf{1}$ (Teorema \ref{intheorem:mobmu}) e
+$\text{Id}=\varphi\ast\textbf{1}$, dove l'ultimo esempio è derivato
+direttamente da formule note sulla funzione $\varphi$ d'Eulero.
+
+\begin{exercise}
+Verificare che l'operazione $\ast$ è sia commutativa che associativa.
+\end{exercise}
+
+
+\subsection{Inversione di Möbius}
+
+Il teorema di inversione di Möbius, data una funzione aritmetica $f$, permette
+di trovare la funzione $g$ tale che $f=g\ast\textbf{1}$, di trovare quindi
+la funzione $g$ tale che $\sum_{d\vert n}g(d)=f(n)$. Determinare tale funzione
+permette di risolvere immantinente una classe, senza dubbio ristretta, di problemi.
+
+\begin{theorem}{Formula d'inversione di Möbius}{mobinv}
+Siano $f$ e $g$ funzioni aritmetiche. Allora, per ogni naturale $n$,
+\begin{equation*}
+	f(n)=\sum_{d\vert n}g(d) \iff g(n)=\sum_{d\vert n}f(n)\mu(n).
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+	Ricordiamo che, per il Teorema \ref{intheorem:mobmu} vale la relazione
+	$\mu\ast\textbf{1}=\delta$.
+	Dimostriamo innanzitutto che $g=f\ast\textbf{1}$, allora $g=f\ast \mu$.
+	Osserviamo che se $f=g\ast\textbf{1}$, allora
+	$f\ast\mu=(g\ast\textbf{1})\ast\mu=g\ast(\textbf{1}\ast\mu)=g\ast\delta=g$.
+	Similmente, se $g=f\ast\mu$, si ha che
+	$g\ast\textbf{1}=f\ast(\mu\ast\textbf{1})=f\ast\delta=f$.\\ Questo è quanto
+	volevasi dimostrare.
+\end{proof}
+
+L'utilità del Teorema \ref{theorem:mobinv} è efficacemente illustrata dal
+seguente, classico, esempio.
+
+\begin{example}{Folklore}{}
+	Una stringa binaria è detta \emph{goduriosa} se non può essere
+	scritta come concatenazione di stringhe identiche più corte. Per esempio,
+	la stringa 100100 non è goduriosa, metre 10010 lo è. Determinare il numero
+	di stringhe goduriose di lunghezza $n$.
+\end{example}
+\begin{proof}
+	Sia $f(n)$ il numero di stringhe goduriose di lunghezza $n$.
+	Notiamo che le stringhe binarie di lunghezza $n$ sono esattamente $2^n$.
+	Notiamo inoltre che una qualsiasi stringa di lunghezza $n$ può essere scritta
+	in un solo modo come concatenazione di stringhe goduriose
+	di lunghezza $d$, dove $d$ è un divisore di $n$. Questo implica che
+	\begin{equation*}
+		2^n=f\ast\textbf{1}=\sum_{d\vert n}f(d).
+	\end{equation*}
+	Applicando la formula di inversione di Möbius, otteniamo che
+	\begin{equation*}
+		f=2^n\ast\mu=\sum_{d\vert n}2^d\cdot\mu\left(\frac{n}{d}\right)
+	\end{equation*}
+	risolvendodunque il problema.
+\end{proof}
+
+\end{document}
+
+
+
+
+
+
+
+
+
