@@ -24,7 +24,8 @@ se $f(mn)=f(m)f(n)$ per ogni coppia $(m,n)$ di interi coprimi.
 	può essere scritto come prodotto di un divisore di $m$ e un divisore di $n$.
 	Si ottiene dunque che
 	\begin{equation*}
-		F(nm)=\sum_{d\vert mn}d=\sum_{d\vert m}d\cdot \sum_{d\vert n}d=F(m)F(n),
+		F(nm)=\sum_{d\vert mn}f(d)=\sum_{d\vert m}f(d)\cdot \sum_{d\vert n}f(d)
+		=F(m)F(n),
 	\end{equation*}
 	da cui la tesi.
 \end{proof}
@@ -42,7 +43,7 @@ La funzione di Möbius $\mu(n)$ è definita come segue:
 	\mu(n):=
 	\begin{cases}
 		1 & \text{se $n=1$,} \\
-		(-1)^m & \text{se $n$ non ha divisori quadrati e ha $m$ divisori,} \\
+		(-1)^m & \text{se $n$ è libero da quadrati e ha $m$ divisori primi,} \\
 		0 & \text{se $n$ ha almeno un divisore quadrato.}
 	\end{cases}
 \end{equation*}
@@ -77,7 +78,7 @@ non indifferente.
 Siano $f$ e $g$ due funzioni aritmetiche, non necessariamente moltiplicative.
 La convoluzione di Dirichelet $f\ast g$ delle due funzioni è definita come segue:
 \begin{equation*}
-	f\ast g:=\sum_{d\vert n}f(d)g\left(\frac{n}{d}\right).
+	(f\ast g)(n)=f\ast g:=\sum_{d\vert n}f(d)g\left(\frac{n}{d}\right).
 \end{equation*}
 \end{definition}
 
@@ -95,7 +96,7 @@ Verificare che l'operazione $\ast$ è sia commutativa che associativa.
 \subsection{Inversione di Möbius}
 
 Il teorema di inversione di Möbius, data una funzione aritmetica $f$, permette
-di trovare la funzione $g$ tale che $f=g\ast\textbf{1}$, di trovare quindi
+di trovare la funzione $g$ tale che $f=g\ast\textbf{1}$, ovvero, di determinare
 la funzione $g$ tale che $\sum_{d\vert n}g(d)=f(n)$. Determinare tale funzione
 permette di risolvere immantinente una classe, senza dubbio ristretta, di problemi.
 
@@ -139,8 +140,9 @@ seguente, classico, esempio.
 	\begin{equation*}
 		f=2^n\ast\mu=\sum_{d\vert n}2^d\cdot\mu\left(\frac{n}{d}\right)
 	\end{equation*}
-	risolvendodunque il problema.
+	risolvendo dunque il problema.
 \end{proof}
+
 
 \end{document}
 
