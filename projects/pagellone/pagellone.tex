@@ -9,51 +9,304 @@
 \fancyhead[C]{Pagellone}
 \fancyhead[R]{\nouppercase{\leftmark}}
 
+
 \section{Geometria}
 
-\begin{proposition}{Casereccio}{}
-Sia $D$ un punto sul lato $BC$ del triangolo $ABC$. Definiamo
-$K=(ABC)\cap AD$, $X=(ABD)\cap KB$ e $Y=(ACD)\cap BC$. Dimostrare che $X$, $Y$ e $D$
-sono allineati.
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h1071762p4663879}
+{https://artofproblemsolving.com/community/c6h1071762p4663879}.
+
+\begin{proposition}{APMO 2015/1}{}
+	Sia $D$ un punto sul lato $BC$ del tirangolo $ABC$.
+	Una linea passante per $D$ interseca la retta $AB$ in $X$
+	e la retta $AC$ in $Y$.
+	Il circocerchio di $BDX$ interseca il circocerchio $\omega$ di $ABC$ in $Z$,
+	oltre che in $B$. Le linee $ZD$ e $ZY$ intersecano nuovamente $\omega$ in $V$
+	e in $W$, rispettivamente. Dimostrare che $AB=VW$.
 \end{proposition}
 
+Proponiamo due dimostrazioni, una sintetica e una più avanzata,
+tratta dal thread Aops.
+
+\paragraph{Soluzione sintetica (by me)}
+Notiamo che $KD\parallel WV$, dal momento che $\dang{BKD}=\dang{BZD}=\dang{BWV}$.
+Osserviamo che
+\begin{equation*}
+	\dang{BXD}=-\dang{BKD}=-\dang{BWV}=\dang{BAV}.
+\end{equation*}
+Ne concludiamo che le rette $AV$ e $XD$ sono parallele.
+Sia $L$ l'intersezione fra $WV$ e $XY$. Possiamo afferamre che il quadrilatero
+$WYCL$ è ciclico, poiché $\dang{LYC}=\dang{YAV}=\dang{VWC}$.
+Ma allora
+\begin{equation*}
+	\dang{XDK}=-\dang{WLY}=-\dang{WCY}=\dang{WCA}=-\dang{ABW}.
+\end{equation*}
+Da queste relazioni segue che le rette $XD$ e $BK$ sono parallele.
+Quindi anche $AV$ e $BW$ sono parallele, che è quanto volevasi dimostrare.
+
+\paragraph{Soluzione per quadrilateri completi (TelvCohl)}
+Osserviamo che $Z$ è il punto di Miquel del quadrilatero completo
+$\{ AB, BC, AY, YX \}$. Quindi $Z$ appartiene a $(DYC)$. Possiamo ora
+affermare che
+\begin{equation*}
+	\dang{VBW}=\dang{VZW}=\dang{BCA}=\dang{BVA}.
+\end{equation*}
+Quindi $AV$ e $BW$ sono parallele, da cui la tesi.
+
+\begin{proposition}{Casereccio}{}
+	Sia $D$ un punto sul lato $BC$ del triangolo $ABC$. Definiamo
+	$K=(ABC)\cap AD$, $X=(ABD)\cap KB$ e $Y=(ACD)\cap BC$.
+	Dimostrare che $X$, $Y$ e $D$
+	sono allineati.
+\end{proposition}
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h1916652p13135961}
+{https://artofproblemsolving.com/community/c6h1916652p13135961}.
+
+\begin{proposition}{Ibero 2019/1 -- WC 2020/G2}{}
+	Sia $ABCD$ un trapezio isocele inscirtto nella circonferenza $\Gamma$,
+	con $AB\parallel CD$.
+	Siano, nell'ordine, $P$ e $Q$ due punti sul segmento $AB$, tali che
+	$AP=QB$. Siano $E$ ed $F$ i secondi punti di intersezione fra $CP$ e $CQ$
+	con $\Gamma$. Le rette $AB$ e $EF$ si intersecano in $G$. Dimostrare che
+	$DG$ tange $\Gamma$.
+\end{proposition}
+
+Il problema è stato usato nel 2020 per l'ammissione al Winter Camp.
+Proponiamo due risoluzioni:
+
+\paragraph{Soluzione proiettiva (by me)}
+Siano $M$ il punto medio di $AB$ e $X:=CM\cap \Gamma$.
+Allora il fatto che $M$ sia il punto medio di $AB$ come di $PQ$ implica
+che i quadrilateri $AXBD$ e $DEXF$ sono armonici. Ne deduciamo che
+$AB$, $EF$ e $\bar{D}$ concorrono in $G$, da cui la tesi.
+
+\paragraph{Soluzione per quadrilateri completi (zuss77)}
+Sia $X:=DP\cap \Gamma$. Osserviamo che $XF\parallel DC$.
+Notiamo che $D$ è il punto di Miquel del quadrilatero completo
+$\{ CE, CF, GF, GQ \}$. Questo implica la ciclicità di $GEPD$.
+Si può allora affermare che
+\begin{equation*}
+	\dang{DPG}=-\dang{GEP}=\dang{CEF}=\dang{CXF}=\dang{XCD},
+\end{equation*}
+da cui la tesi, per il teorema dell'angolo tangente.
+
+\pagebreak
 \section{Teoria dei numeri}
 
-\begin{proposition}{}{}
-Determinare tutte le coppie di interi $(a,b)$ tali che $a^3+1=b^2(b+2)$.
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h82828p474988}
+{https://artofproblemsolving.com/community/c6h82828p474988}.
+
+\begin{proposition}{APMO 2004/1}{}
+	Determinare tutti gli insiemi $S$ non-vuoti di cardinalità finita
+	tali che $\frac{a+b}{(a,b)}$ sia un elemento di $S$, per ogni scelta di
+	elementi $a$ e $b$ in $S$, non necessariamente distinti.
 \end{proposition}
+
+Approciamo il problema dimostrando il fatto seguente.
+
+\begin{claim*}{}{}
+	$S$ non può contenere due elementi coprimi.
+\end{claim*}
 \begin{proof}
-	Notiamo che la relazione proposta può essere riscritta come
-	\begin{align*}
-		a^3 &= (b+1)^3-(b+1)^2-(b+1), \\
-			 &= (b+1)(b^2+b-1).
-	\end{align*}
-	Sia $d$ il massimo comun divisore di $b+1$ e $b^2+b-1$. Osserviamo che $d$ divide
-	$b^2+2b+1$ e $b^2+b-1$, quindi divide anche $(b^2+2b+1)-(b^2+b-1)-(b+1)=1$;
-	ovvero $d$ è uguale a $1$.
-	Dal momento che $b+1$ e $b^2+b-1$ sono primi fra loro e che il loro prodotto
-	è un cubo, possiamo affermare che sia $b+1$ che $b^2+b-1$ sono cubi. Definiamo quindi
-	$x^3:=b+1$ e $y^3:=b^2+b-1$. Segue immediatamente che $x^6-x^3-1=y^3$.
-
-	Supponiamo che $x$ sia maggiore di $1$. Allora vale la relazione
-	\begin{equation*}
-		(x^2-1)^3 < x^6-x^3-1=y^3 < (x^2)^3,
-	\end{equation*}
-	che è una contraddizione, in quanto non vi può essere alcun cubo compreso
-	fra due cubi consecutivi. Supponendo che $x=-\alpha$ sia
-	minore di $-1$, otteniamo un'ulteriore contraddizione:
-	\begin{equation*}
-		(\alpha^2)^3 < \alpha^6 + \alpha^3 -1=y^3 < (\alpha^2+1)^3.
-	\end{equation*}
-
-	Possiamo dunque affermare che $x$ appartiene all'insieme $\{ -1,0,1 \}$.
-	Come si può facilmente verificare,
-	le uniche soluzioni intere dell'equazione iniziale sono quindi le coppie
-	$(-1,-2),(-1,0)$ e $(0,-1)$.
-
+	Supponiamo che $x_1:=a$ e $x_2:=b$
+	siano due elementi coprimi appartenenti ad $S$.
+	Possiamo allora affermare che anche $x_3:=a+b$ è un elemento di $S$.
+	Definiamo la successione
+	$\{ x_i \}_{i=1}^{\infty}$ secondo la regola $x_{n+2}=x_{n+1}+x_n$,
+	allora $(x_{i-1},x_{i})=1$, e quindi $x_i$ è un elemento di $S$
+	per ogni $i$. Questo contraddice l'ipotesi che $S$ abbia cardinalità
+	finita, dimostrando che $S$ non può contenere due elementi coprimi.
 \end{proof}
 
+Supponiamo ora che $x$ sia un elemento di $S$, allora anche
+$\frac{x+x}{(x,x)}=2$ appartiene ad $S$. Ovvero, $2$ appartiene
+sempre ad $S$, dal momento che $S$ contiene almeno un elemento.
+Supponiamo ora che $S$ contanga, oltre al 2, un altro intero positivo
+$2^k\cdot y$, con $y$ dispari. Possiamo affermare che anche
+$2^{k-1}y+1$ appartiene ad $S$. Ma questa è una contraddizione
+per quanto prima dimostrato,
+poiché $2$ e $2^{k-1}y+1$ sono coprimi.\\
+L'unico insieme che soddisfa le condizioni del problema
+è quindi $\{ 2\}$.
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h407219p2274367}
+{https://artofproblemsolving.com/community/c6h407219p2274367}.
+
+\begin{proposition}{}{}
+	Supponiamo che $a$, $b$ e $c$ siano interi positvi. Dimostrare che
+	$a^2+b+c$, $a+b^2+c$ e $a+b+c^2$ non possono essere contemporanemente
+	tre quadrati.
+\end{proposition}
+
+
+\begin{proposition}{IUSS 2020}{}
+	Determinare tutte le coppie di interi $(a,b)$ tali che $a^3+1=b^2(b+2)$.
+\end{proposition}
+
+Le uniche soluzioni sono le coppie $(-1,-2)$, $(-1,0)$ e $(0,-1)$.
+Proponiamo due metodi risolutivi.
+
+\paragraph{Soluzione stupida (by me)}
+
+Notiamo che la relazione proposta può essere riscritta come
+\begin{align*}
+	a^3 &= (b+1)^3-(b+1)^2-(b+1), \\
+		 &= (b+1)(b^2+b-1).
+\end{align*}
+Sia $d$ il massimo comun divisore di $b+1$ e $b^2+b-1$.
+Osserviamo che $d$ divide
+$b^2+2b+1$ e $b^2+b-1$, quindi divide anche $(b^2+2b+1)-(b^2+b-1)-(b+1)=1$;
+ovvero $d$ è uguale a $1$.
+Dal momento che $b+1$ e $b^2+b-1$ sono primi fra loro e che il loro prodotto
+è un cubo, possiamo affermare che sia $b+1$ che $b^2+b-1$ sono cubi.
+Definiamo quindi
+$x^3:=b+1$ e $y^3:=b^2+b-1$. Segue immediatamente che $x^6-x^3-1=y^3$.
+
+Supponiamo che $x$ sia maggiore di $1$. Allora vale la relazione
+\begin{equation*}
+	(x^2-1)^3 < x^6-x^3-1=y^3 < (x^2)^3,
+\end{equation*}
+che è una contraddizione, in quanto non vi può essere alcun cubo compreso
+fra due cubi consecutivi. Supponendo che $x=-\alpha$ sia
+minore di $-1$, otteniamo un'ulteriore contraddizione:
+\begin{equation*}
+	(\alpha^2)^3 < \alpha^6 + \alpha^3 -1=y^3 < (\alpha^2+1)^3.
+\end{equation*}
+
+Possiamo dunque affermare che $x$ appartiene all'insieme $\{ -1,0,1 \}$.
+Come si può facilmente verificare,
+le uniche soluzioni intere dell'equazione iniziale sono quindi le coppie
+$(-1,-2),(-1,0)$ e $(0,-1)$.
+
+
+\paragraph{Soluzione veloce (Massimiliano Foschi)}
+
+Supponiamo che $b$ sia maggiore di 1. Allora vale
+la relazione
+\begin{equation*}
+	b^3<b^3+2b^2-1=a^3<(b+1)^3,
+\end{equation*}
+che è una contraddizione, in quanto non vi può essere alcun cubo
+compreso fra due cubi consecutivi.
+Similmente, se $b$ è minore di $-2$, $b$ non può essere un cubo
+perché compresa fra due cubi consecutivi. Questo implica che $b$ appartiene
+all'insieme $\{-2,-1,0,1 \}$, da cui si ricavano facilmente le soluzioni del
+problema.
+
+\begin{proposition}{BMO 2009/1}{}
+	Risolvere l'equazione $3^x-5^y=z^2$ negli interi positivi.
+\end{proposition}
+
+Analizzando l'equazione modulo 4, osserviamo che $x$ deve essere pari.
+Poniamo $x:=2a$. Per differenza di quadrati, otteniamo che
+$5^x=(3^a+z)(3^a-z)$. Sia $3^a+z$ che $3^a-z$ devono quindi essere
+potenze di 5. Supponiamo che $3^a+z=5^h$ e che $3^a-z=5^k$.
+Per differenza, si ottiene che $k=1$ e che $2\cdot 3^a=5^h+1$. Notiamo che
+per $h>1$,
+per il teorema di Zsigmondy, $5^h+1$ è divisibile da almeno un fattore primo
+diverso da $2$ o da $3$; otteniamo quindi una contraddizione, in quanto
+questi ultimi sono gli unici primi che possono dividere il LHS.
+L'unica soluzione è dunque la terna $(2,1,2)$.
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h358602p1958953}
+{https://artofproblemsolving.com/community/c6h358602p1958953}.
+
+\begin{proposition}{BMO SH 2010/N2}{}
+	Risolvere l'equazione $x^3=2y^2+1$ negli interi positivi.
+\end{proposition}
+Presentiamo una soluzione bucata decisamente troppo bella per essere vera.
+
+\paragraph{Soluzione bucata (by me)}
+È noto che un cubo può essere congruo a $0$ o a $\pm 1$ modulo 7.
+Tuttavia, un quadrato può essere congruo a 1, 2 o 4 modulo 7.
+Dal momento che $2y^2+1 \pmod{7} \in \{2,3,5 \}$ e che
+$x^3 \pmod{7} \in \{ 0,\pm 1\}$, l'equazione non ha soluzioni.
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h2326459p18624212}
+{https://artofproblemsolving.com/community/c6h2326459p18624212}.
+
+\begin{proposition}{BMO 2020/2}{}
+	Determinare tutte le funzioni
+	$f:\mathbb{N^{\times}}\rightarrow\mathbb{N^{\times}}$ tali che, per ogni
+	intero positivo $n$, valgono le seguenti affermazioni:
+	\begin{enumerate}
+		\item $ \sum_{k=1}^{n} f(k) $ è un quadrato perfetto;
+		\item $f(n)$ divide $n^3$.
+	\end{enumerate}
+\end{proposition}
+
+Notiamo che la funzione $f(n):=n^3$ soddisfa le considizioni
+del problema, poiché che $\sum_{k=1}^n k^3=(1+\cdots+n)^2$.
+Dimostriamo che tale funzione è l'unica soluzione del problema.
+
+Supponiamo induttivamente che per ogni $k$ minore o uguale a $n-1$
+$f(k)$ valga esattamente $k^3$. Vogliamo dimostrare che
+anche $f(n)$ vale $n^3$. Definiamo la funzione $F(n):=\sum_{k=1}^n f(k)$;
+allora vale la relazione
+\begin{equation*}
+	(1+\cdots+(n-1))^2<F(n-1)+f(n)\le (1+\cdots+n)^2.
+\end{equation*}
+Poiché $F(n-1)+f(n)$ deve essere un quadrato,
+possiamo scrivere $F(n-1)+f(n)$ come $\left(\frac{(n-1)n}{2}+x\right)^2$, dove
+$x$ è un intero compreso fra 1 e $n$, estremi inclusi. Quindi
+
+\begin{align*}
+	f(n) &=\left( \frac{(n-1)n}{2}+x \right) ^2-F(n-1)
+	=\left( \frac{(n-1)n}{2}+x \right)^2 - \left( \frac{(n-1)n}{2} \right)^2 \\
+		  &= x(x+n^2-n),
+\end{align*}
+per qualche intero $x$. Sappiamo che $f(n)$ deve dividere $n^3$ e ne concludiamo
+che $x(x+n^2-n)$ deve essere minore o uguale a $n^3$. Notiamo che
+$x(x+n^2-n)\le n^3$ se e solo se $(n^2+x)(x-n)\le 0$. Il fattore $n^2+x$ è
+sempre positivo; deduciamo quindi che $x-n$ deve essere minore o uguale a 0.
+Poiché $x$ è compreso fra $1$ e $n$, $x$ deve necessariamente essere uguale a $n$.
+
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h1916101p13131612}
+{https://artofproblemsolving.com/community/c6h1916101p13131612}.
+
+\begin{proposition}{Ibero 2019/1}{}
+	Definiamo $s(n)$ come la somma dei quadrati delle cifre di un intero $n$.
+	Per esempio, $s(15)=1^2+5^2=26$. Determinare tutti gli interi $n$ per cui
+	$s(n)=n$.
+\end{proposition}
+
+Supponiamo che $n$ abbia $k$ cifre. Allora $10^{k-1}\le n=s(n) \le 9^2k$,
+da cui si ricava che $k$ è minore di 4.
+Supponiamo che $n=(abc)$ abbia tre cifre;
+allora $s(n)\le 3\cdot 9^2=243$, quindi $a=1,2$. Se $a\le 2$, allora
+$a^2+b^2+c^2\le 4+2\cdot 9^2=166$, quindi $a=1$. Questo implica che
+\begin{equation*}
+	0\le 10b-b^2+99=c^2-c \le 72,
+\end{equation*}
+che è una contraddizione dal momento che $10b-b^2$ è sempre positivo.
+Supponiamo invece che $n=(ab)$ abbia due cifre. Similmente, si ottiene che
+\begin{equation*}
+	0\le 100a-a^2=b^2-b \le 72,
+\end{equation*}
+che è una contraddizione. Rimane da analizzare il caso in cui $n=(a)$ ha
+una cifra soltanto. Si verifica facilmente che l'unica soluzione, di tale caso
+e del problema, è $n=1$.
+
 \end{document}
+
+
+
+
+
+
 
 
 

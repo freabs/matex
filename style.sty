@@ -26,6 +26,12 @@
 	 urlcolor={RubineRed}
 }
 
+% ----- Geometry
+
+\usepackage{asymptote}
+\newcommand{\dang}{\measuredangle}
+
+
 % ----- Theorem Boxes 
 
 \usepackage[dvipsnames]{xcolor}
@@ -116,9 +122,9 @@
 \newtcbtheorem{claim}{Claim --- } {
 	before skip=0.5cm,
 	after skip=0.5cm,
-	coltitle=Black,
-	colback=Black!5,
-	colframe=Black,
+	coltitle=OliveGreen,
+	colback=ForestGreen!5,
+	colframe=ForestGreen,
 	detach title,
 	boxrule=0pt,
 	leftrule=2pt,
@@ -145,4 +151,9 @@
 \titleformat{\subsection}
 {\sffamily\large\bfseries}
 {\color{Maroon}§\thesubsection}{5pt}{}
+
+
+\titleformat{\paragraph}[hang]
+{\sffamily\bfseries\color{Sepia}}
+{}{30pt}{¶ \hspace{0.20cm}}        % accrocchio!!!
 
