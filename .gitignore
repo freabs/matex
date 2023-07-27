@@ -7,5 +7,7 @@
 *.log
 *.synctex.gz
 *.out
+*.pre
+*.DS_Store
 
 *.pdf
