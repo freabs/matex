@@ -199,6 +199,33 @@ perché compresa fra due cubi consecutivi. Questo implica che $b$ appartiene
 all'insieme $\{-2,-1,0,1 \}$, da cui si ricavano facilmente le soluzioni del
 problema.
 
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h1311821p7030145}
+{https://artofproblemsolving.com/community/c6h1311821p7030145}.
+
+\begin{proposition}{Ibero 2016/1}{}
+	Determinare tutte le quadruple $(p,q,r,k)$ di numeri primi
+	che soddisfano la relazione $pq+qr+rp=12k+1$.
+\end{proposition}
+
+Analizzando la relazione data modulo 4 e assumendo
+che $p$, $q$ ed $r$ siano dispari, si ottiene una contraddizione:
+$3=1 \pmod{4}$. Supponiamo wlog che $r$ sia uguale a 2.
+Dalla relazione $pq+2q+2p=12k+1$ otteniamo quanto segue:
+\begin{equation*}
+	(p+2)(q+2)=12k+5.
+\end{equation*}
+Studiando tale relazione modulo 3, deduciamo che almeno uno fra
+$p$ e $q$ deve essere congruo a 2 $\pmod{3}$, e che quindi
+$q=3$, wlog.
+Sostituendo $r=2$ e $q=3$ nell'equazione originale, si ottiene
+che $5p+5=12k$; ovvero $k=5$ e $p=11$, dal momento che $k$ è
+altresì un numero primo.
+
+Le uniche soluzioni del problema sono quindi le
+6 permutazioni della quadrupla $(2, 3, 11; 5)$.
+
 \begin{proposition}{BMO 2009/1}{}
 	Risolvere l'equazione $3^x-5^y=z^2$ negli interi positivi.
 \end{proposition}
