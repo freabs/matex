@@ -7,7 +7,6 @@
 \usepackage{fancyhdr}
 \usepackage{enumitem}
 
-
 % ----- Document spec
 
 \usepackage[left=2.4cm,right=2.4cm,top=3cm,bottom=3cm]{geometry}
@@ -133,6 +132,23 @@
 	left=2mm,
 	fonttitle=\bfseries\sffamily,
 }{claim}
+
+\newtcbtheorem{remark}{Commento --- } {
+	before skip=0.5cm,
+	after skip=0.5cm,
+	coltitle=Black,
+	colback=Black!5,
+	colframe=Black,
+	detach title,
+	boxrule=0pt,
+	leftrule=2pt,
+	attach title to upper,
+	sharp corners,
+	left=2mm,
+	fonttitle=\bfseries\sffamily,
+}{claim}
+
+
 
 \newtheorem{exercise}{Esercizio}[subsection]
 \newtheorem{definition}{Definizione}[subsection]
