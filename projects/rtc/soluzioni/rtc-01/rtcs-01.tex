@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{../../../../style}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{RTC Soluzioni 1}
+\fancyhead[C]{Soluzioni}
+\fancyhead[R]{10/10/2023}
+
+\textbf{Combinatoria:}
+\begin{enumerate}
+	\item \textbf{[0009]} Ogni disposizione rispetta le condizioni del
+		problema tranne la disposizione $BBAAA$,
+		quindi il numero cercato è pari a $\binom{5}{2}-1=9$.
+
+	\item \textbf{[9760]} Poiché alla finale partecipano
+		32 squadre, il primo posto può potenzialmente essere assegnato
+		a 32 squadre diverse; il secondo posto potrà essere asseganto
+		a 31 squadre (tutte tranne quella che è arrivata prima); analogamente,
+		il terzo posto può essere assegnato a 30 squadre (tutte tranne la
+		prima e la seconda classificata). I podi possibili sono quindi
+		$32\cdot 31\cdot 30=29760$. La soluzione del problema è quindi 9760.
+	
+	\item \textbf{[4960]} Abbiamo visto che i possibili podi sono 29760.
+		Consideriamo una delegazione formata dalle squadre $A$, $B$ e $C$.
+		Tale delegazione può corrispondere ai sei podi $ABC$, $ACB$, $BAC$, $BCA$,
+		$CAB$ e $CBA$ (dove l'ordine delle lettere corrisponde al posizionamento
+		delle tre squadre).
+		Quindi il numero delle delegazioni corrsponde al numero
+		dei podi fratto 6: la soluzione del problema è quindi 4960.
+
+	\item \textbf{[9600]} Poiché $x_i$ è un intero positivo
+		dispari, possiamo scriverlo
+		nella forma $2y_i-1$ per un qualche intero positivo $y_i$. Ma allora
+		$x_1+x_2+x_3+x_4=2(y_1+y_2+y_3+y_4)-4=98$. Il numero di quaterne
+		che soddisfano le condizioni del problema corrisponde quindi
+		al numero di quaterne $(y_1,y_2,y_3,y_4)$ tali che
+		$y_1+y_2+y_3+y_4=51$. Usando il metodo dei separatori, si ricava
+		facilmente che questo numero è pari a $\binom{50}{3}$. La soluzione
+		del problema è quindi 9600.
+\end{enumerate}
+
+
+\textbf{Geometria:}
+\begin{enumerate}
+	\item \textbf{[0075]} Osserviamo che
+		$\alpha:=\dang{DMA}=\dang{MDC}=\dang{CMD}$,
+		quindi $M$ è il punto su $AB$ tale che $DC=CM$. Osserviamo che
+		$\dang{BMC}=30^{\circ}$, poiché $CM=2CB$ e $\dang{CBM}=90^\circ$.
+		Questo implica che $2\alpha+30^\circ=180^\circ$ e quindi che
+		$\alpha=\dang{DMA}=75^\circ$.
+	\item \textbf{[0035]} Sia $X$ l'intersezione fra $AP$ e $BC$.
+		Allora
+		\begin{align*}
+			\dang{BPC}-\dang{BAC}&=(\dang{BPX}+\dang{XPC})-(\dang{BAP}+\dang{PAC}) \\
+										&=20^\circ+\dang{BAP}+15^\circ+
+										\dang{PAC}-(\dang{BAP}+\dang{PAC}=35^\circ.
+		\end{align*}
+
+	\item \textbf{[0015]} Indichiamo con $x$ il valore degli angoli
+		$\dang{DAC}=\dang{CDA}$. Osserviamo che valgono le relazioni
+		\begin{equation*}
+		\begin{cases}
+				2x=\alpha+\beta, \\
+				\alpha-\beta=30^\circ.
+			\end{cases}
+		\end{equation*}
+		Quindi $\alpha=x+15^\circ$ e $\dang{BAD}=\alpha-x=15^\circ$.
+
+	\item \textbf{[0020]} Sia $X$ l'intersezione fra $AC$ e $BI$.
+		Per il teorema dell'angolo esterno, possiamo affermare che
+		\begin{align*}
+			\dang{CIA}&=\dang{CIX}+\dang{XIA}
+						=\frac{1}{2}\gamma+\frac{1}{2}\beta+
+						\frac{1}{2}\alpha+\frac{1}{2}\beta \\
+						 &=\frac{1}{2}\alpha+\frac{3}{2}\beta=130^\circ,
+		\end{align*}
+		dove l'ultimo passaggio è giustificato dal fattoche $\gamma=\beta$.
+		Sappiamo anche che $\alpha+2\beta=180^\circ$. Risolviamo quindi
+		il sistema
+		\begin{equation*}
+			\begin{cases}
+				\alpha+3\beta=260^\circ \\
+				\alpha+2\beta=180^\circ,
+			\end{cases}
+		\end{equation*}
+		per ottenere che $\alpha=20^\circ$.
+\end{enumerate}
+
+
+\textbf{Teoria dei numeri e Algebra:}
+\begin{enumerate}
+	\item	\textbf{[0016]} La condizione del provlama è equivalente
+		al dire che $n-6$ divide $n^2-6$, ovvero che $n-6\vert n^2-6$.
+		Osserviamo che se $n-6\vert n^2-6$, allora $n-6\vert n^2-6
+		-(n-6)^2=12n-42$. Quindi $n-6\vert 12n-42-12(n-6)=30$.
+		Questo implica che $n-6$ è un divisore non necessariamente
+		positivo di $30$. I divisori di 30 sono 16, quindi l'espressione
+		data dal problema è intera per 16 valori di $n$.
+
+	\item \textbf{[0008]} La condizione del problema
+		è equivalete alla condizione
+		$2n+1\vert n^3-3n+2$. Osserviamo che se $2n+1\vert n^3-3n+2$,
+		allora $2n+1\vert 8(n^3-3n+2)-(2n+1)^3=-12n^2-3n+15$.
+		Ma quindi $2n+1\vert -12n^2-3n+15+3(2n+1)^2=9n+18$. Possiamo ancora
+		affermare che $2n+1\vert 2(9n+18)-9(2n+1)=27$. Questo implica che
+		$2n+1$ deve essere un divisore, non necessariamente positivo, di 27.
+		I divisori positivi o negativi di 27 sono 8, quindi l'espressione
+		data dal problema è intera per 8 valori di $n$.
+	\item \textbf{[0890]} Supponiamo che $n+10\vert n^3+100$.
+		Allora $n+10\vert n^3+100-(n+10)^3=-30n^2-300n-900$, e quindi
+		$n+10\vert -30n^2-300n-900+30(n+10)^2=300n+2100$. Allora
+		$n+10\vert 300n+2100-300(n+10)=-900$. Possiamo  quindi
+		affermare che $n+10$ divide $-900$. Il più grande divisore di $-900$
+		è 900, quindi $n$ vale al massimo $890$.
+	\item \textbf{[2022]} Sia $(a,b)$ una coppia di interi positivi
+		che soddisfa le condizioni del problema.
+		Possiamo affermare che $a\vert 2a+b$ e quindi che $a\vert b$.
+		Dall'ultima relazione segue che $a\le b$. Ma poiché la coppia
+		$(a,b)$ soddisfa le condizioni del problema, si deve avere che
+		$a\ge b$; quindi $a$ e $b$ devono essere uguali.
+		Il numero di coppie $(a,b)$ con $0<a=b<2023$ sono esattamente
+		2022, che è quindi la soluzione del problema.
+\end{enumerate}
+
+\end{document}

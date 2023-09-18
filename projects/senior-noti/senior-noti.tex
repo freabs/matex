@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{../../style}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Francesco Bollini}
+\fancyhead[C]{Problemi per il Senior}
+\fancyhead[R]{\nouppercase{\leftmark}}
+
+\textbf{Outline di C2-08:}
+
+\begin{itemize}
+	\item[--] Definizioni: Sia $a$ il numero di vertici che hanno
+		grado dispari; sia $\Gamma_V$ il grado del vertice $V$.
+	\item[--] Il gioco termina quando $\Gamma_V<2$ per ogni vertice $V$.
+	\item[--] $\sum \Gamma_V$ decresce ad ogni mossa di $2$ o di $6$.
+		In particolare, dopo due mosse, $\sum \Gamma_V$ è invariata $\pmod{4}$.
+	\item[--] Il numero $M$ di mosse che vengono giocate è pari a
+		$\frac{1}{2}[\sum \Gamma_V-2a]$.\\
+		Se $M$ è dispari allora vince $A$;\\
+		Se $M$ è pari allora vince $B$.
+	\item[=>] $M$ (e quindi il vincitore) è univocamente determinato
+		dalle quantità $\sum \Gamma_V$ e $a$. Quindi l'esito non dipende
+		da come giocano i due giocatori.
+\end{itemize}
+
+\textbf{Outline di A3-10:} (BMO 2000/1)
+\begin{itemize}
+	\item[--] $f$ è bijettiva;
+	\item[--] $f(f(y))=y$ per ogni $y$ reale;
+	\item[--] $f(x)f(x)=x^2$ per ogni $x$ reale;
+	\item[--] Supponiamo che esistano due reali $a$ e $b$ non nulli tali che
+		$f(a)=a$ e $f(b)=-b$. Allora, otteniamo una contraddizione sostituendo
+		$(x\to a,y\to b)$ nell'equazione di partenza.
+\end{itemize}
+
+\end{document}
