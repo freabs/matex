@@ -110,6 +110,30 @@ Si può allora affermare che
 \end{equation*}
 da cui la tesi, per il teorema dell'angolo tangente.
 
+
+\begin{proposition}{PreIMO TST 2002/4}{}
+	Sia $ABC$ un triangolo scaleno, sia $\Gamma=(ABC)$.
+	La bisettrice dell'angolo in $A$ incontra $BC$ in $E$. Sia
+	$M$ il punto medio dell'arco $BC$ che contiene $A$;
+	poniamo allora $D=\Gamma \cap ME$. Dimostrare che
+	il circocentro del triangolo $AED$ è l'intersezione fra
+	$BC$ e $DD$.
+\end{proposition}
+
+Sia $N$ il punto medio dell'arco $BC$ che non contiene $A$;
+sia $M_A$ il punto medio di $BC$. Notiamo che $\dang{NAM}=\dang{MM_A E}$;
+il quadrilatero $EM_A MA$ è quindi ciclico. Quindi $\dang{NAM_A}=\dang{DMN}
+=\dang{DAN}$, ovvero $D$ è il punto di intersezione fra $S_A$ e $\Gamma$;
+quindi $ABDC$ è armonico. In particolare, detto $S=BC\cap DD$, si ha che
+$SA=SD$.
+
+Osserviamo che valgono le segenti relazioni:
+\begin{align*}
+	\dang{AES}&=\dang{SCA}+\dang{EAC}=\dang{SAB}+\dang{BAE} \\
+				 &=\dang{SAE}.
+\end{align*}
+
+
 \vspace{0.5cm}
 \textit{Aops link:}
 \href{https://artofproblemsolving.com/community/c6h2140034p15706437}
@@ -563,6 +587,111 @@ Tale $c$ non può essere intero, il che è una contraddizione.
 	L'accrocchio usato nella dimostrazione del punto $(a)$ permette
 	di generalizzare il caso in cui $\vert A \vert=\vert B\vert=2n+1$.
 \end{remark*}
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h1414672p7967490}
+{https://artofproblemsolving.com/community/c6h1414672p7967490}
+\begin{proposition}{CMO 2017/2}{}
+	La funzione $f:\mathbb{Z}^+\rightarrow \mathbb{Z}^+$ è tale
+	che $f(f(n))$ sia uguale al numero di divisori positivi di $n$,
+	per ogni intero positivo $n$. Dimostrare che
+	$f(p)$ è primo per ogni primo $p$.
+\end{proposition}
+
+Indichiamo con $d(n)$ il numero di divisori positivi dell'intero $n$.
+Supponiamo per assurdo che $f(p)$ non sia primo per un qualche
+primo $p$. Allora
+\begin{equation*}
+	d(f(p))=f(d(p))=f(2)>2.
+\end{equation*}
+Sappiamo che $f(f(2))=2$; valgono dunque le seguenti uguaglianze:
+\begin{equation*}
+	f(d(2))=d(f(2))=f(2).
+\end{equation*}
+Quindi $d(f(2))=f(2)$. Gli unici interi che sono uguali al numero
+dei loro divisori positivi sono 1 e 2. Dal momento che
+$f(2)>2$, otteniamo una contraddizione. Quindi $f(p)$ è primo
+per ogni numero primo $p$.
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h1894707p12941949}
+{https://artofproblemsolving.com/community/c6h1894707p12941949}
+
+\begin{proposition}{China Western MO 2019/1}{}
+	Determinare tutti gli interi positivi $n$ per cui
+	$3^n+n^2+2019$ è un quadrato perfetto.
+\end{proposition}
+
+Osservando l'equazione modulo 4 si ricava facilmente
+che $n$ deve essere pari. Poniamo allora $n=2m$.
+L'espressione data diventa quindi $3^{2m}+4m^2+2019$;
+osserviamo che tale quantità, per $m\ge 6$,
+è compresa fra $(3^m)^2$ e $(3m+1)^2$, e non può essere quindi
+un quadrato perfetto.
+
+Verifichiamo per via diretta che l'unico valore di $n<14$
+che verifica le condizioni del prolblema è 4.
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h1854148p12519631}
+{https://artofproblemsolving.com/community/c6h1854148p12519631}
+
+\begin{proposition}{APMO 2019/1}{}
+	Determinare tutte le funzioni $f:\mathbb{Z^+}\rightarrow\mathbb{Z^+}$
+	per cui $f(a)+b\vert f(a)f(b)+a^2$ per ogni coppia $a,b\in \mathbb{Z^+}$.
+\end{proposition}
+
+\newpage
+\section{Combinatoria}
+\begin{proposition}{IMC 1999}{}
+	In una scacchiera $n\times n$ vengono colorate  $2n$ caselle.
+	Dimostrare che esiste un intero $k>1$ per cui è possibile trovare $2k$
+	caselle colorate $a_1,\dots,a_{2k}$ in modo che $a_{2i-1}$ e $a_{2i}$
+	siano sulla stessa riga e che $a_{2i}$ e $a_{2i+1}$ siano sulla stessa
+	colonna.
+\end{proposition}
+Consideraimo il grafo bipartito $G$ che ha per vertici
+le righe e le colonne della griglia $n\times n$ e per archi le $2n$ caselle
+colorate della stessa. Volgiamo mostrare che $G$ contiene un ciclo.
+
+Supponiamo per assurdo che $G$ non contenga un ciclo. Allora $G$ può essere
+interpretato come un insieme di componenti connesse che non contengono cicli,
+ovvero degli alberi. $G$ è quidi un insieme di $t$ alberi $A_i$. Osserviamo che
+\[ 
+	2n=\vert E(G) \vert = \sum_{i=1}^{t}\vert E(A_i)\vert=
+		\sum_{i=1}^{t} \vert A_i \vert -1=2n-t.
+\]
+Questo implicherebbe che $t=0$; essendo questo impossibile, otteniamo una
+contraddizione. $G$ contiene quindi un ciclo.
+
+Essendo $G$ bipartito, la lunghezza $k$ di tale ciclo deve necessariamente
+essere pari.
+
+\vspace{0.5cm}
+\textit{Aops link:}
+\href{https://artofproblemsolving.com/community/c6h546168p3160559}
+{https://artofproblemsolving.com/community/c6h546168p3160559}
+\begin{proposition}{IMO SL 2012/C1}{}
+	Sulla lavagna sono scritti in riga alcuni interi positivi.
+	La maestra Anna, iterativamente, sceglie due di questi interi
+	$x$ e $y$ adiacenti, con $x>y$, dove $x$ è alla sinistra di $y$,
+	e li sostituisce con gli interi $(y+1,x)$ o $(x-1,x)$. Dimostrare
+	la maestra Anna, ad un certo punto, non potrà più cambiare i numeri
+	scritti alla lavagna.
+\end{proposition}
+
+Indichiamo con $Q_k$ il numero di coppie
+$(x,y)$ che possono essere modificate dalla maestra Anna, dopo che la
+$k$-esima mossa è stata applicata.
+Notiamo che $Q_k>Q_{k+1}$ per ogni $k$, dal momento che se $x>y$ allora
+$y+1\le x$ e $x-1<x$. Poiché $Q_i$ è una quantità intera non negativa,
+$Q_j=0$ per qualche naturale $j$. Poiché Anna può compiere la $(j+1)$-esima
+mossa se e solo se $Q_j\ne 0$, fatta la $j$-esima mossa,
+non potrà più combiare i nuemri sulla lavagna. Questo è quanto volevasi
+dimostrare.
 
 \newpage
 
